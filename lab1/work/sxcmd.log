@@ -1,52 +1,178 @@
 ### WaveView ADV log file, revision W-2024.09-SP2 (build Mar 01, ) ###
-### created at 11:11:41 on Fri Feb  6 2026 (Linux AMD64) ###
-### Host Name: vlsi01.ucsc-extension.edu   User ID: pd08151   PID: 606107   ###
+### created at 12:36:30 on Fri Feb  6 2026 (Linux AMD64) ###
+### Host Name: vlsi01.ucsc-extension.edu   User ID: pd08151   PID: 657676   ###
 wv_start_log
 # (0) running in waveview only mode
 # (0) SW_SX_PERL_LIB defined
 # (0) SW_SX_TCL_LIB defined
 # (0) HOME defined
-# (0) # TYPE S abort
-# (0) # memory usage 620.65MB
-# (0) 0x916A56 /synopsys/current/wv/platforms/linux64/bin/wv() [0x916a56]
-# (0) 0x916FF6 /synopsys/current/wv/platforms/linux64/bin/wv() [0x916ff6]
-# (0) 0x8F63FC2F /lib64/libc.so.6(+0x3fc2f) [0x7f368f63fc2f]
-# (0) 0x8F68D02C /lib64/libc.so.6(+0x8d02c) [0x7f368f68d02c]
-# (0) 0x8F63FB85 /lib64/libc.so.6(raise+0x15) [0x7f368f63fb85]
-# (0) 0x8F629872 /lib64/libc.so.6(abort+0xd2) [0x7f368f629872]
-# (0) 0x9649C9BE /synopsys/current/wv/platforms/linux64/lib/libQt5Core.so.5(_ZNK14QMessageLogger5fatalEPKcz+0xb6) [0x7f369649c9be]
-# (0) 0x96D313C2 /synopsys/current/wv/platforms/linux64/lib/libQt5Gui.so.5(_ZN22QGuiApplicationPrivate25createPlatformIntegrationEv+0x18f2) [0x7f3696d313c2]
-# (0) 0x96D3182F /synopsys/current/wv/platforms/linux64/lib/libQt5Gui.so.5(_ZN22QGuiApplicationPrivate21createEventDispatcherEv+0x2f) [0x7f3696d3182f]
-# (0) 0x966C9635 /synopsys/current/wv/platforms/linux64/lib/libQt5Core.so.5(_ZN23QCoreApplicationPrivate4initEv+0xab5) [0x7f36966c9635]
-# (0) 0x96D345DB /synopsys/current/wv/platforms/linux64/lib/libQt5Gui.so.5(_ZN22QGuiApplicationPrivate4initEv+0x1b) [0x7f3696d345db]
-# (0) 0x95D78738 /synopsys/current/wv/platforms/linux64/lib/libQt5Widgets.so.5(_ZN19QApplicationPrivate4initEv+0x8) [0x7f3695d78738]
-# (0) 0x17729E2 /synopsys/current/wv/platforms/linux64/bin/wv(qxInit+0x8c) [0x17729e2]
-# (0) 0xD46DB1 /synopsys/current/wv/platforms/linux64/bin/wv(gfWinInit+0xb5) [0xd46db1]
-# (0) 0x906FCB /synopsys/current/wv/platforms/linux64/bin/wv(main+0x2920) [0x906fcb]
-# (0) 0x8F62A60F /lib64/libc.so.6(+0x2a60f) [0x7f368f62a60f]
-# (0) 0x8F62A6BF /lib64/libc.so.6(__libc_start_main+0x7f) [0x7f368f62a6bf]
-# (0) 0x904543 /synopsys/current/wv/platforms/linux64/bin/wv() [0x904543]
-# (0) # TYPE S abort
-# (0) # memory usage 620.91MB
-# (0) 0x916A56 /synopsys/current/wv/platforms/linux64/bin/wv() [0x916a56]
-# (0) 0x916FDB /synopsys/current/wv/platforms/linux64/bin/wv() [0x916fdb]
-# (0) 0x21D59AF /synopsys/current/wv/platforms/linux64/bin/wv() [0x21d59af]
-# (0) 0x8F63FC2F /lib64/libc.so.6(+0x3fc2f) [0x7f368f63fc2f]
-# (0) 0x96D2E2C2 /synopsys/current/wv/platforms/linux64/lib/libQt5Gui.so.5(_ZN15QGuiApplication4fontEv+0xc2) [0x7f3696d2e2c2]
-# (0) 0x96DF05E0 /synopsys/current/wv/platforms/linux64/lib/libQt5Gui.so.5(_ZN5QFontC1Ev+0x20) [0x7f3696df05e0]
-# (0) 0x95D99B6D /synopsys/current/wv/platforms/linux64/lib/libQt5Widgets.so.5(_ZN14QWidgetPrivateC1Ei+0x14d) [0x7f3695d99b6d]
-# (0) 0x95F9BD09 /synopsys/current/wv/platforms/linux64/lib/libQt5Widgets.so.5(_ZN11QMessageBoxC1EP7QWidget+0x29) [0x7f3695f9bd09]
-# (0) 0x17ADC40 /synopsys/current/wv/platforms/linux64/bin/wv(_ZN7QX_HINTC1EP7QWidgetPcii+0x2a) [0x17adc40]
-# (0) 0x171F49B /synopsys/current/wv/platforms/linux64/bin/wv(qxInfoHintBox+0x7d) [0x171f49b]
-# (0) 0xD48ED9 /synopsys/current/wv/platforms/linux64/bin/wv(gfInfoHintBox+0x45) [0xd48ed9]
-# (0) 0xA9EDDC /synopsys/current/wv/platforms/linux64/bin/wv(cdSaveSetup4+0x54f) [0xa9eddc]
-# (0) 0xA9EDF6 /synopsys/current/wv/platforms/linux64/bin/wv(cdSaveSetup2+0x14) [0xa9edf6]
-# (0) 0xA9EE10 /synopsys/current/wv/platforms/linux64/bin/wv(cdSaveSetup+0x13) [0xa9ee10]
-# (0) 0x916BE0 /synopsys/current/wv/platforms/linux64/bin/wv() [0x916be0]
-# (0) 0x916FF6 /synopsys/current/wv/platforms/linux64/bin/wv() [0x916ff6]
-# (0) 0x8F63FC2F /lib64/libc.so.6(+0x3fc2f) [0x7f368f63fc2f]
-# (0) 0x8F68D02C /lib64/libc.so.6(+0x8d02c) [0x7f368f68d02c]
-# (0) 0x8F63FB85 /lib64/libc.so.6(raise+0x15) [0x7f368f63fb85]
-# (0) 0x8F629872 /lib64/libc.so.6(abort+0xd2) [0x7f368f629872]
-# (0) 0x9649C9BE /synopsys/current/wv/platforms/linux64/lib/libQt5Core.so.5(_ZNK14QMessageLogger5fatalEPKcz+0xb6) [0x7f369649c9be]
-# (0) 0x96D313C2 /synopsys/current/wv/platforms/linux64/lib/libQt5Gui.so.5(
+sx_open_sim_file_read {invx4_tt0p65v-40c_out.tr0}
+wv_expand_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr0(0)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_select_list_item {WaveView} {} {sigview} {v(vss)} 7
+wv_select_list_item {WaveView} {} {sigview} {i(vdd)} 0
+wv_drag_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr0(0)@toplevel(0)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr0(0)@toplevel(0)} {0} {+sep=@}
+wv_drag_enter WV1
+wv_drop_on WV1
+wv_resize_browser {WaveView} {} {WV.Browser} 250 426
+wv_resize_browser {WaveView} {} {waveview 1:1} 656 400
+wv_resize_window {WaveView} 916 569
+wv_resize_browser {WaveView} {} {WV.Browser} 250 453
+wv_resize_browser {WaveView} {} {waveview 1:1} 680 427
+wv_resize_window {WaveView} 940 596
+wv_resize_browser {WaveView} {} {WV.Browser} 250 469
+wv_resize_browser {WaveView} {} {waveview 1:1} 692 443
+wv_resize_window {WaveView} 952 612
+wv_resize_browser {WaveView} {} {WV.Browser} 250 481
+wv_resize_browser {WaveView} {} {waveview 1:1} 700 455
+wv_resize_window {WaveView} 960 624
+wv_resize_browser {WaveView} {} {WV.Browser} 250 488
+wv_resize_browser {WaveView} {} {waveview 1:1} 704 462
+wv_resize_window {WaveView} 964 631
+wv_resize_browser {WaveView} {} {WV.Browser} 250 508
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 482
+wv_resize_window {WaveView} 984 651
+wv_resize_browser {WaveView} {} {WV.Browser} 250 512
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 486
+wv_resize_window {WaveView} 984 655
+wv_resize_browser {WaveView} {} {WV.Browser} 250 514
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 488
+wv_resize_window {WaveView} 984 657
+wv_resize_browser {WaveView} {} {WV.Browser} 250 515
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 489
+wv_resize_window {WaveView} 984 658
+wv_resize_browser {WaveView} {} {WV.Browser} 250 432
+wv_resize_browser {WaveView} {} {waveview 1:1} 572 406
+wv_resize_window {WaveView} 832 575
+wv_resize_browser {WaveView} {} {WV.Browser} 250 248
+wv_resize_browser {WaveView} {} {waveview 1:1} 316 222
+wv_resize_window {WaveView} 576 391
+wv_resize_browser {WaveView} {} {WV.Browser} 250 198
+wv_resize_browser {WaveView} {} {waveview 1:1} 232 172
+wv_resize_window {WaveView} 492 341
+wv_resize_browser {WaveView} {} {waveview 1:1} 233 172
+wv_resize_window {WaveView} 493 341
+wv_resize_browser {WaveView} {} {WV.Browser} 250 437
+wv_resize_browser {WaveView} {} {waveview 1:1} 559 411
+wv_resize_window {WaveView} 819 580
+wv_resize_browser {WaveView} {} {WV.Browser} 250 481
+wv_resize_browser {WaveView} {} {waveview 1:1} 649 455
+wv_resize_window {WaveView} 909 624
+wv_resize_browser {WaveView} {} {WV.Browser} 250 494
+wv_resize_browser {WaveView} {} {waveview 1:1} 690 468
+wv_resize_window {WaveView} 950 637
+wv_resize_browser {WaveView} {} {WV.Browser} 250 499
+wv_resize_browser {WaveView} {} {waveview 1:1} 702 473
+wv_resize_window {WaveView} 962 642
+wv_resize_browser {WaveView} {} {WV.Browser} 250 507
+wv_resize_browser {WaveView} {} {waveview 1:1} 707 481
+wv_resize_window {WaveView} 967 650
+wv_resize_browser {WaveView} {} {WV.Browser} 250 516
+wv_resize_browser {WaveView} {} {waveview 1:1} 711 490
+wv_resize_window {WaveView} 971 659
+wv_resize_browser {WaveView} {} {WV.Browser} 250 520
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 494
+wv_resize_window {WaveView} 984 663
+wv_resize_browser {WaveView} {} {WV.Browser} 250 521
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 495
+wv_resize_window {WaveView} 984 664
+wv_resize_browser {WaveView} {} {WV.Browser} 250 520
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 494
+wv_resize_window {WaveView} 984 663
+wv_resize_browser {WaveView} {} {WV.Browser} 250 519
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 493
+wv_resize_window {WaveView} 984 662
+wv_resize_browser {WaveView} {} {WV.Browser} 250 518
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 492
+wv_resize_window {WaveView} 984 661
+wv_resize_browser {WaveView} {} {WV.Browser} 250 517
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 491
+wv_resize_window {WaveView} 984 660
+wv_resize_browser {WaveView} {} {WV.Browser} 250 516
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 490
+wv_resize_window {WaveView} 984 659
+wv_resize_browser {WaveView} {} {WV.Browser} 250 517
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 491
+wv_resize_window {WaveView} 984 660
+wv_resize_browser {WaveView} {} {WV.Browser} 250 518
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 492
+wv_resize_window {WaveView} 984 661
+wv_resize_browser {WaveView} {} {WV.Browser} 250 519
+wv_resize_browser {WaveView} {} {waveview 1:1} 724 493
+wv_resize_window {WaveView} 984 662
+wv_select_window {WaveView} 
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL1:1.XAXIS1
+wv_drag_item_to WV1 243 13
+wv_zoom_x WV1.PANEL1:1 4.99139e-10 6.28227e-10
+wv_select_waveview 1 {waveview 1}
+wv_select_toolbar_item {WaveView} {waveview 1:1} {Full Unzoom} 
+wv_select_waveview 1 {waveview 1}
+wv_select_toolbar_item {WaveView} {waveview 1:1} {Waveform Monitor} 
+wv_select_dialog {MonitorSettings} 
+wv_press_button {MonitorSettings} {} {Cancel} 
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL1:1.XAXIS1
+wv_drag_item_to WV1 220 8
+wv_zoom_x WV1.PANEL1:1 4.00172e-10 7.0568e-10
+wv_select_waveview 1 {waveview 1}
+wv_waveview_context_menu WV1.PANEL1:1 4.89028e-10 0.351243
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL1:1.XAXIS1
+wv_drag_item_to WV1 338 9
+wv_zoom_x WV1.PANEL1:1 4.96888e-10 5.80733e-10
+wv_press_tool_button {WaveView} {} {OpenWaveformFile0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {1256}
+wv_select_list_item {FileDialog} {} {FileList} {invx4_tt0p65v-40c_out.tr1} 38
+wv_press_button {FileDialog} {} {Ok} 
+wv_expand_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr1(1)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr1(1)@toplevel(0)} {0} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr1(1)@toplevel(0)} {0} {+sep=@}
+wv_drag_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr1(1)@toplevel(0)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr1(1)@toplevel(0)} {0} {+sep=@}
+wv_drag_enter WV1
+wv_drag_to WV1 327 32
+wv_drop_on WV1
+wv_select_waveview 1 {waveview 1}
+wv_select_toolbar_item {WaveView} {waveview 1:1} {Full Unzoom} 
+wv_press_tool_button {WaveView} {} {OpenWaveformFile0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {316}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {711}
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {1237}
+wv_select_list_item {FileDialog} {} {FileList} {invx4_tt0p65v-40c_out.tr2} 39
+wv_press_button {FileDialog} {} {Ok} 
+wv_expand_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr2(2)} {+sep=@}
+wv_drag_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr2(2)@toplevel(0)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr2(2)@toplevel(0)} {0} {+sep=@}
+wv_drag_enter WV1
+wv_drag_to WV1 307 221
+wv_drop_on WV1
+wv_select_waveview 1 {waveview 1}
+wv_select_wv_item WV1.PANEL1:1.XAXIS1
+wv_drag_item_to WV1 235 5
+wv_zoom_x WV1.PANEL1:1 4.60413e-10 7.65921e-10
+wv_press_tool_button {WaveView} {} {OpenWaveformFile0} 
+wv_select_dialog {FileDialog} 
+wv_move_scrollbar {FileDialog} {} {FileList.HScrollBar} {1256}
+wv_select_list_item {FileDialog} {} {FileList} {invx4_tt0p65v-40c_out.tr3} 40
+wv_select_list_item {FileDialog} {} {FileList} {invx4_tt0p65v-40c_out.tr4} 41 +shift
+wv_press_button {FileDialog} {} {Ok} 
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr3(3)} {0} {+sep=@}
+wv_expand_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr3(3)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr3(3)@toplevel(0)} {0} {+sep=@}
+wv_drag_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr3(3)@toplevel(0)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr3(3)@toplevel(0)} {0} {+sep=@}
+wv_drag_enter WV1
+wv_drag_to WV1 20 88
+wv_drop_on WV1
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr4(4)} {0} {+sep=@}
+wv_expand_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr4(4)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr4(4)@toplevel(0)} {0} {+sep=@}
+wv_drag_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr4(4)@toplevel(0)} {+sep=@}
+wv_select_tree_item {WaveView} {} {hierview} {D0:invx4_tt0p65v-40c_out.tr4(4)@toplevel(0)} {0} {+sep=@}
+wv_drag_enter WV1
+wv_drag_to WV1 45 103
+wv_drop_on WV1

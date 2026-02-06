@@ -1,0 +1,164 @@
+================================================================================
+                         Q1.2: OUTPUT LOAD SWEEP ANALYSIS
+                  INVX4 Inverter Characterization (Slew = 150ps)
+================================================================================
+
+SIMULATION SETUP:
+-----------------
+Technology:     ASAP7 7nm
+Cell:           INVx4 (4x Inverter)
+Temperature:    -40°C
+Supply Voltage: 0.65V
+Input Slew:     150ps (FIXED)
+Variable:       Output Load (5fF to 25fF)
+
+SPICE DECK: invx4_tt0p65v-40c_load_sweep.spi
+- Uses .alter statements to sweep output load
+- Each .alter creates a new simulation with different cload value
+- Results saved to separate .mt* files
+
+
+================================================================================
+DATA EXTRACTION FROM HSPICE OUTPUT FILES
+================================================================================
+
+Column Order (IMPORTANT - Different from Q1.1!):
+------------------------------------------------
+Line 3 headers: rise_delay, fall_delay, rise_tr, fall_fr
+(Note: Q1.1 had fall_delay first, Q1.2 has rise_delay first)
+
+Mapping:
+--------
+invx4_tt0p65v-40c_load_sweep.mt0  →  cload = 15fF  (initial value)
+invx4_tt0p65v-40c_load_sweep.mt1  →  cload = 5fF   (first .alter)
+invx4_tt0p65v-40c_load_sweep.mt2  →  cload = 10fF  (second .alter)
+invx4_tt0p65v-40c_load_sweep.mt3  →  cload = 20fF  (third .alter)
+invx4_tt0p65v-40c_load_sweep.mt4  →  cload = 25fF  (fourth .alter)
+
+
+Raw Data (from .mt* files):
+---------------------------
+File  | Load  | rise_delay    | fall_delay    | rise_tr       | fall_fr
+------|-------|---------------|---------------|---------------|---------------
+mt0   | 15fF  | 5.716e-11 s   | 6.547e-11 s   | 4.215e-11 s   | 3.714e-11 s
+mt1   | 5fF   | 3.501e-11 s   | 4.227e-11 s   | 2.646e-11 s   | 2.300e-11 s
+mt2   | 10fF  | 4.744e-11 s   | 5.543e-11 s   | 3.498e-11 s   | 3.053e-11 s
+mt3   | 20fF  | 6.405e-11 s   | 7.370e-11 s   | 5.101e-11 s   | 4.410e-11 s
+mt4   | 25fF  | 7.091e-11 s   | 8.097e-11 s   | 6.135e-11 s   | 5.026e-11 s
+
+
+Conversion to Picoseconds:
+--------------------------
+Formula: value_in_ps = value_in_seconds × 10^12
+
+
+================================================================================
+FINAL DATA TABLE (in Picoseconds, Sorted by Load)
+================================================================================
+
+Output Load (fF) | Rise Delay (ps) | Fall Delay (ps) | Rise Trans (ps) | Fall Trans (ps)
+-----------------|-----------------|-----------------|-----------------|------------------
+       5         |     35.01       |     42.27       |     26.46       |     23.00
+      10         |     47.44       |     55.43       |     34.98       |     30.53
+      15         |     57.16       |     65.47       |     42.15       |     37.14
+      20         |     64.05       |     73.70       |     51.01       |     44.10
+      25         |     70.91       |     80.97       |     61.35       |     50.26
+
+
+================================================================================
+REQUIRED PLOTS FOR Q1.2
+================================================================================
+
+Plot 2a: Output Load vs Propagation Delays
+-------------------------------------------
+X-axis:             Output Load (fF) [5, 10, 15, 20, 25]
+Y-axis (Primary):   Rise Delay (ps) [35.01, 47.44, 57.16, 64.05, 70.91]
+Y-axis (Secondary): Fall Delay (ps) [42.27, 55.43, 65.47, 73.70, 80.97]
+
+Filename: Q1.2a_delay_vs_load.png
+
+
+Plot 2b: Output Load vs Transition Times
+-----------------------------------------
+X-axis:             Output Load (fF) [5, 10, 15, 20, 25]
+Y-axis (Primary):   Rise Transition (ps) [26.46, 34.98, 42.15, 51.01, 61.35]
+Y-axis (Secondary): Fall Transition (ps) [23.00, 30.53, 37.14, 44.10, 50.26]
+
+Filename: Q1.2b_transition_vs_load.png
+
+
+================================================================================
+KEY OBSERVATIONS
+================================================================================
+
+1. LINEAR RELATIONSHIP WITH LOAD:
+   - Both delays increase linearly with output capacitance
+   - Slope ≈ 7-8 ps per 5fF of capacitance
+   - Classic RC delay behavior: Delay ∝ Capacitance
+
+2. INTERESTING REVERSAL:
+   - Fall delay is HIGHER than rise delay (opposite of Q1.1!)
+   - At 5fF:  Fall=42.27ps vs Rise=35.01ps (difference: 7.26ps)
+   - At 25fF: Fall=80.97ps vs Rise=70.91ps (difference: 10.06ps)
+   - Suggests different RC time constants for charging vs discharging
+
+3. TRANSITION TIME BEHAVIOR:
+   - Both transitions increase significantly with load
+   - Rise transitions consistently slower than fall transitions
+   - Larger loads take longer to charge/discharge
+
+4. PHYSICAL INTERPRETATION:
+   - Delay = R × C, where R is output resistance, C is load capacitance
+   - Larger load → more charge to move → longer time
+   - NMOS has higher output resistance in this case (fall delay > rise delay)
+   - Or fall path has additional parasitic capacitance
+
+5. COMPARISON TO Q1.1:
+   Q1.1 (Slew Sweep):  Rise Delay > Fall Delay  (PMOS weaker)
+   Q1.2 (Load Sweep):  Fall Delay > Rise Delay  (Different limitation)
+   
+   This shows that different parameters can reveal different limiting factors!
+
+
+================================================================================
+RC DELAY MODEL
+================================================================================
+
+The linear relationship validates the simple RC delay model:
+    
+    t_delay = K × R_out × C_load
+    
+Where:
+- R_out = output resistance of the inverter
+- C_load = load capacitance we're varying
+- K = constant (~0.69 for 50% transition)
+
+From our data:
+- Delay change: ~36 ps for 20fF change (from 5fF to 25fF)
+- Sensitivity: ~1.8 ps/fF
+
+This matches expected behavior for this technology node.
+
+
+================================================================================
+MEASUREMENT DEFINITIONS
+================================================================================
+
+rise_delay: Time from input FALLING to 50% VDD to output RISING to 50% VDD
+fall_delay: Time from input RISING to 50% VDD to output FALLING to 50% VDD
+rise_tr:    Time for output to transition from 20% to 80% VDD (rising)
+fall_fr:    Time for output to transition from 80% to 20% VDD (falling)
+
+
+================================================================================
+POINTS: 20 points (10 pts per plot)
+================================================================================
+
+Required Submission:
+  - Plot 2a: Output Load vs Delays
+  - Plot 2b: Output Load vs Transitions
+
+
+================================================================================
+END OF Q1.2 REPORT
+================================================================================

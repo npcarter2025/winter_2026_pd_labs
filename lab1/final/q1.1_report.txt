@@ -1,0 +1,142 @@
+================================================================================
+                         Q1.1: INPUT SLEW SWEEP ANALYSIS
+                    INVX4 Inverter Characterization (Load = 15fF)
+================================================================================
+
+SIMULATION SETUP:
+-----------------
+Technology:     ASAP7 7nm
+Cell:           INVx4 (4x Inverter)
+Temperature:    -40°C
+Supply Voltage: 0.65V
+Output Load:    15 fF (FIXED)
+Variable:       Input Slew (50ps to 250ps)
+
+SPICE DECK: invx4_tt0p65v-40c.spi
+- Uses .alter statements to sweep input slew
+- Each .alter creates a new simulation with different slew value
+- Results saved to separate .mt* files
+
+
+================================================================================
+DATA EXTRACTION FROM HSPICE OUTPUT FILES
+================================================================================
+
+How to read the .mt* files:
+---------------------------
+Each file has format:
+  Line 3: Column headers (fall_delay, rise_delay, rise_tr, fall_fr)
+  Line 5: Measurement values in SECONDS (scientific notation)
+
+Mapping:
+--------
+invx4_tt0p65v-40c_out.mt0  →  slew = 50ps   (initial value)
+invx4_tt0p65v-40c_out.mt1  →  slew = 100ps  (first .alter)
+invx4_tt0p65v-40c_out.mt2  →  slew = 150ps  (second .alter)
+invx4_tt0p65v-40c_out.mt3  →  slew = 200ps  (third .alter)
+invx4_tt0p65v-40c_out.mt4  →  slew = 250ps  (fourth .alter)
+
+
+Raw Data (from .mt* files):
+---------------------------
+File  | Slew  | fall_delay    | rise_delay    | rise_tr       | fall_fr
+------|-------|---------------|---------------|---------------|---------------
+mt0   | 50ps  | 3.268e-11 s   | 3.812e-11 s   | 3.497e-11 s   | 2.754e-11 s
+mt1   | 100ps | 4.513e-11 s   | 5.178e-11 s   | 3.848e-11 s   | 3.176e-11 s
+mt2   | 150ps | 5.716e-11 s   | 6.547e-11 s   | 4.215e-11 s   | 3.714e-11 s
+mt3   | 200ps | 6.653e-11 s   | 7.714e-11 s   | 4.984e-11 s   | 4.301e-11 s
+mt4   | 250ps | 7.494e-11 s   | 8.802e-11 s   | 5.539e-11 s   | 4.940e-11 s
+
+
+Conversion to Picoseconds:
+--------------------------
+Formula: value_in_ps = value_in_seconds × 10^12
+Example: 3.268e-11 s = 3.268 × 10^-11 × 10^12 ps = 32.68 ps
+
+
+================================================================================
+FINAL DATA TABLE (in Picoseconds)
+================================================================================
+
+Input Slew (ps) | Rise Delay (ps) | Fall Delay (ps) | Rise Trans (ps) | Fall Trans (ps)
+----------------|-----------------|-----------------|-----------------|------------------
+      50        |     38.12       |     32.68       |     34.97       |     27.54
+     100        |     51.78       |     45.13       |     38.48       |     31.76
+     150        |     65.47       |     57.16       |     42.15       |     37.14
+     200        |     77.14       |     66.53       |     49.84       |     43.01
+     250        |     88.02       |     74.94       |     55.39       |     49.40
+
+
+================================================================================
+REQUIRED PLOTS FOR Q1.1
+================================================================================
+
+Plot 1a: Input Slew vs Propagation Delays
+------------------------------------------
+X-axis:             Input Slew (ps) [50, 100, 150, 200, 250]
+Y-axis (Primary):   Rise Delay (ps) [38.12, 51.78, 65.47, 77.14, 88.02]
+Y-axis (Secondary): Fall Delay (ps) [32.68, 45.13, 57.16, 66.53, 74.94]
+
+Filename: Q1.1a_delay_vs_slew.png
+
+
+Plot 1b: Input Slew vs Transition Times
+----------------------------------------
+X-axis:             Input Slew (ps) [50, 100, 150, 200, 250]
+Y-axis (Primary):   Rise Transition (ps) [34.97, 38.48, 42.15, 49.84, 55.39]
+Y-axis (Secondary): Fall Transition (ps) [27.54, 31.76, 37.14, 43.01, 49.40]
+
+Filename: Q1.1b_transition_vs_slew.png
+
+
+================================================================================
+KEY OBSERVATIONS
+================================================================================
+
+1. LINEAR RELATIONSHIP:
+   - Both delays increase linearly with input slew
+   - Slope ≈ 2.0 ps delay per 10 ps of input slew
+   - This linear behavior is captured in Liberty timing models
+
+2. RISE vs FALL ASYMMETRY:
+   - Rise delay consistently HIGHER than fall delay
+   - Difference: ~5-13 ps across all slew values
+   - Indicates PMOS (pull-up) is weaker than NMOS (pull-down)
+
+3. TRANSITION TIME BEHAVIOR:
+   - Rise transitions slower than fall transitions
+   - Both increase with input slew
+   - Output transition times are influenced by input slew rate
+
+4. PHYSICAL INTERPRETATION:
+   - Slower input → longer time for transistors to fully turn on/off
+   - Input capacitance charging time dominates at slow slews
+   - PMOS has higher resistance or larger parasitic capacitance
+
+
+================================================================================
+MEASUREMENT DEFINITIONS (from SPICE deck)
+================================================================================
+
+fall_delay: Time from input RISING to 50% VDD to output FALLING to 50% VDD
+rise_delay: Time from input FALLING to 50% VDD to output RISING to 50% VDD
+rise_tr:    Time for output to transition from 20% to 80% VDD (rising)
+fall_fr:    Time for output to transition from 80% to 20% VDD (falling)
+
+These definitions are standard in digital timing characterization.
+
+
+================================================================================
+POINTS: 20 points (10 pts per plot)
+================================================================================
+
+Required Submission:
+  - Plot 1a: Input Slew vs Delays
+  - Plot 1b: Input Slew vs Transitions
+
+Note: Lab instructions say "You can draw plot on paper and send picture of it.
+      Do not spend time on graphing plot."
+
+================================================================================
+END OF Q1.1 REPORT
+================================================================================
