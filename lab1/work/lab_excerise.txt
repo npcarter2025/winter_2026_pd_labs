@@ -1,0 +1,54 @@
+
+1. Simulation of an Inverter cell of size 4x with process technology of 7nm.
+
+   Run the spice simulation using command 
+
+     -> hspice -i invx4_tt0p65v-40c.spi -o invx4_tt0p65v-40c_out
+
+       Ignore error of " **error** invalid memory reference"
+   Refer measurement files (*.mt*) to know delay and transition time.
+
+To view spice waveform use command
+   	wv  <filename>_out.tr* , where * can be any number
+
+   
+   Q1.1: Submit two plots with   (20 pts)
+   	  a. input slew on X axis, rise_delay on Y axis, fall_delay on secondary Y axis
+	  b. input slew on X axis, rise_tr on Y axis, fall_tr on secondary Y axis
+   
+   Q1.2: Rerun the simulation with cload of 5ff, 10ff, 20ff & 25ff by changing
+value of cload paramater (i.e. .param cload = ) in invx4_tt0p65v-40c.spi and 
+submit two plots with ( 20 pts)
+	Use the command 
+		hspice -i invx4_tt0p65v-40c_load_sweep.spi
+
+	a. Output load on X axis, rise_delay on Y axis, fall_delay on secondary Y axis
+	b. Output load on X axis, rise_tr on Y axis, fall_tr on secondary Y axis
+
+You can draw plot on paper and send picture of it.
+Do not spend time on graphing plot.
+
+
+2. Answer the below question
+ 
+ Q2.1  Is both rise & fall delay are increasing with rising of output load & input slew?  ( 10 points )
+
+ Q2.2 Is timing arc from input pin to outpin of inverter is inverting arc, non-inverting arc or nonunate? (10 points)
+
+ Q2.3 Read Liberty model of a standard cell library at 
+
+/usr/synopsys/SAED_EDK32_28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75vn40c.lib 
+
+and tell value of nom_proccess, nom_voltage & nom_temperature?  (10 points)
+
+ Q2.4 Read LEF model of a standard cell library at
+
+/usr/synopsys/SAED_EDK32_28nm/SAED32_EDK/lib/stdcell_rvt/lef/saed32nm_rvt_1p9m.lef
+
+and give answer of below questions  ( 30 points)
+	->  write boundary size ( width X height) of TNBUFFX2_RVT cell
+	-> How many & which layers are used insed TNBUFFX32_RTVT
+	-> Give name of all power signals which used for all Cells?
+	-> What is "OBS" in LEF file and why it is being spefied in LEF?
+
+

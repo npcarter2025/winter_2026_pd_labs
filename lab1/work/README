@@ -1,0 +1,10 @@
+To run spice simulation use command: 
+       hspice -i <filename>.spi -o <filename>_out
+
+       Ignore error of " **error** invalid memory reference"
+       Refer <filename>_out.mt* for delay and constraint measurement.
+       	    where * can be any number
+
+To view spice waveform use command
+   	wv  <filename>_out.tr* , where * can be any number
+

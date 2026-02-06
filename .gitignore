@@ -1,0 +1,204 @@
+
+
+# # Physical Design .gitignore
+
+# # ============================================
+# # General EDA Tool Files
+# # ============================================
+
+# # Log files
+# *.log
+# *.rpt
+# *.sum
+# *.svf
+
+# # Database files
+# *.db
+# *.ddc
+# *.pvl
+
+# # Temporary files
+# *.tmp
+# *~
+# .nfs*
+
+# # ============================================
+# # Synopsys Tools (Design Compiler, ICC2, PT)
+# # ============================================
+
+# # Design Compiler
+# *.mr
+# *.pvl
+# *.syn
+# #alib-52/
+# #work/
+# #WORK/
+
+# # IC Compiler 2 (ICC2)
+# *.ndm/
+# *.nlib/
+# *.fram
+# icc2_output/
+# icc2_shell_command.log*
+# *.design_lib/
+# *.ref_libs/
+
+# # PrimeTime
+# *.pt
+# pt_shell_command.log*
+
+# # Library Compiler
+# *.lib
+# *.db
+
+# # Formality
+# *.fml
+# formality_log*
+
+# # ============================================
+# # Cadence Tools (Innovus, Genus)
+# # ============================================
+
+# # Innovus
+# *.enc
+# *.enc.dat/
+# fePlan/
+# *.innovus/
+# innovus.cmd*
+# innovus.logv*
+# *.odb
+# *.oa
+# *.db/
+
+# # Genus
+# genus.log*
+# genus.cmd*
+# *.g
+
+# # Encounter
+# *.conn.rpt*
+
+# # ============================================
+# # Mentor/Siemens Tools
+# # ============================================
+
+# # Calibre
+# *.db
+# svdb/
+# *.drc.results
+# *.lvs.results
+# calibre.log
+
+# # ============================================
+# # Large Output Files
+# # ============================================
+
+# # Layout files (usually too large for git)
+# *.gds
+# *.gdsii
+# *.oas
+# *.oasis
+
+# # Backup DEF/LEF files
+# *.def.bak
+# *.lef.bak
+
+# # ============================================
+# # Verification and Analysis
+# # ============================================
+
+# # DRC/LVS reports
+# *.drc
+# *.drc.db
+# *.lvs
+# *.lvs.db
+
+# # Timing reports
+# *.timing
+# *.slack
+
+# # Power analysis
+# *.pwr
+# *.power
+
+# # ============================================
+# # Simulation
+# # ============================================
+
+# # VCS
+# simv*
+# csrc/
+# *.vpd
+# *.vdb
+# *.fsdb
+# ucli.key
+
+# # ModelSim
+# #work/
+# *.wlf
+# *.vstf
+# transcript
+
+# # ============================================
+# # Common Directories to Ignore
+# # ============================================
+
+# # Output directories
+# output/
+# results/
+# reports/
+# logs/
+
+# # Backup directories
+# backup/
+# *.bak/
+
+# # Session and history
+# .session*
+# *.ses
+# .command_history
+# *.history
+
+# # Technology files (often proprietary/large)
+# *.tf
+# qrcTechFile
+# *.tech
+# # *.lef
+# # *.lib
+
+# # Large library files
+# *.ndm
+# *.nlib
+
+# # ============================================
+# # OS and Editor Files
+# # ============================================
+
+# # Linux
+# *~
+# .directory
+
+# # macOS
+# .DS_Store
+# .AppleDouble
+# .LSOverride
+
+# # Vim
+# *.swp
+# *.swo
+# *.swn
+
+# # Emacs
+# *~
+# \#*\#
+# .\#*
+
+# # VS Code
+# .vscode/
+
+# ============================================
+# Project Specific
+# ============================================
+
+# Keep your scripts and source files
+# Add any project-specific patterns here

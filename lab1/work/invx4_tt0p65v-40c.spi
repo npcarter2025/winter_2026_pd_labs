@@ -1,0 +1,54 @@
+
+
+
+.include asap7nm_tt.pm
+.include asap_inv4x.sp
+
+.param temp = -40c
+.param cload = 15ff
+.param vdd = 0.65v
+.param vss = 0
+.param slew = 50ps
+
+VDD VDD VSS DC vdd 
+VSS VSS 0   DC 0
+
+.TEMP temp
+
+x1 INP VDD VSS OUT INVx4_ASAP7_6t_R
+cload OUT VSS cload
+
+VINP INP VSS PWL (0,vss 500ps,vss '500ps+slew',vdd '1500ps+slew',vdd '1500ps+(2*slew)',vss)
+
+.trans 0.01ps 2.5ns uic
+.option post =2
+.nodeset v(OUT) = vdd
+
+.meas tran fall_delay trig v(INP) val='0.5*vdd' rise=1
++                     targ v(OUT) val='0.5*vdd' fall=1
+ 
+.meas tran rise_delay trig v(INP) val='0.5*vdd' fall=1
++                     targ v(OUT) val='0.5*vdd' rise=1
+
+.meas tran rise_tr trig v(OUT) val='0.2*vdd' rise=1
++               targ v(OUT) val='0.8*vdd' rise=1
+
+.meas tran fall_fr trig v(OUT) val='0.8*vdd' fall=1
++               targ v(OUT) val='0.2*vdd' fall=1
+
+.alter
+.param slew = 100ps
+
+.alter 
+.param slew = 150ps
+
+.alter 
+.param slew = 200ps
+
+.alter
+.param slew = 250ps
+
+.alter
+.param slew = 50ps
+
+.end

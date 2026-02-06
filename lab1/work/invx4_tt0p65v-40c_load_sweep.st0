@@ -1,0 +1,131 @@
+****** PrimeSim HSPICE -- W-2024.09 linux64 (Aug 27 2024 9174816) ******
+Input File: invx4_tt0p65v-40c_load_sweep.spi
+lic:
+lic: FLEXlm: SDK_14.2
+lic: USER:   jdshah               HOSTNAME: vlsi01.ucsc-extension.edu
+lic: HOSTID: 140a08fa             PID:      897236
+lic: Using FLEXlm license file:
+lic: 27020@StudentLicenseServer.ucsc-extension.edu
+lic: Checkout 1 hspice
+lic: License/Maintenance for hspice will expire on 31-jan-2026/2024.09
+lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 27020@StudentLicenseServer.ucsc-extension.edu
+lic:
+
+ init: begin read circuit files, cpu clock= 4.33E-02
+       option post =     2.00
+ init: end read circuit files, cpu clock= 4.50E-02 peak memory=     526 mb
+ init: begin check errors, cpu clock= 4.50E-02
+ init: end check errors, cpu clock= 5.67E-02 peak memory=     526 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 5.67E-02
+       establish matrix -- done, cpu clock= 5.69E-02 peak memory=     526 mb
+       re-order matrix -- done, cpu clock= 5.70E-02 peak memory=     526 mb
+ init: end setup matrix, cpu clock= 5.73E-02 peak memory=     526 mb
+ output: invx4_tt0p65v-40c_load_sweep.mt0
+ sweep: tran tran0    begin, stop_t=  2.50E-09 #sweeps=**** cpu clock= 5.81E-02
+ tran: time= 2.7807E-10 tot_iter=      12 conv_iter=       6 cpu clock= 5.85E-02
+ tran: time= 5.0000E-10 tot_iter=      20 conv_iter=      10 cpu clock= 5.87E-02
+ tran: time= 7.5491E-10 tot_iter=     109 conv_iter=      51 cpu clock= 6.22E-02
+ tran: time= 1.1186E-09 tot_iter=     117 conv_iter=      55 cpu clock= 6.24E-02
+ tran: time= 1.3686E-09 tot_iter=     121 conv_iter=      57 cpu clock= 6.25E-02
+ tran: time= 1.6250E-09 tot_iter=     125 conv_iter=      59 cpu clock= 6.26E-02
+ tran: time= 1.7546E-09 tot_iter=     145 conv_iter=      69 cpu clock= 6.33E-02
+ tran: time= 2.0492E-09 tot_iter=     210 conv_iter=      98 cpu clock= 6.59E-02
+ tran: time= 2.2992E-09 tot_iter=     214 conv_iter=     100 cpu clock= 6.61E-02
+ tran: time= 2.5000E-09 tot_iter=     218 conv_iter=     102 cpu clock= 6.61E-02
+ sweep: tran tran0    end, cpu clock= 6.62E-02 peak memory=     526 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 8.06E-02
+       option post =     2.00
+ init: end read circuit files, cpu clock= 8.18E-02 peak memory=     527 mb
+ init: begin check errors, cpu clock= 8.18E-02
+ init: end check errors, cpu clock= 9.16E-02 peak memory=     527 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 9.16E-02
+       establish matrix -- done, cpu clock= 9.17E-02 peak memory=     527 mb
+       re-order matrix -- done, cpu clock= 9.17E-02 peak memory=     527 mb
+ init: end setup matrix, cpu clock= 9.20E-02 peak memory=     527 mb
+ output: invx4_tt0p65v-40c_load_sweep.mt1
+ sweep: tran tran0    begin, stop_t=  2.50E-09 #sweeps=**** cpu clock= 9.26E-02
+ tran: time= 2.7807E-10 tot_iter=      12 conv_iter=       6 cpu clock= 9.30E-02
+ tran: time= 5.0000E-10 tot_iter=      20 conv_iter=      10 cpu clock= 9.31E-02
+ tran: time= 7.7038E-10 tot_iter=     110 conv_iter=      49 cpu clock= 9.66E-02
+ tran: time= 1.0204E-09 tot_iter=     114 conv_iter=      51 cpu clock= 9.67E-02
+ tran: time= 1.2704E-09 tot_iter=     118 conv_iter=      53 cpu clock= 9.68E-02
+ tran: time= 1.5204E-09 tot_iter=     122 conv_iter=      55 cpu clock= 9.69E-02
+ tran: time= 1.7547E-09 tot_iter=     146 conv_iter=      67 cpu clock= 9.77E-02
+ tran: time= 2.0660E-09 tot_iter=     233 conv_iter=     105 cpu clock= 1.01E-01
+ tran: time= 2.3160E-09 tot_iter=     237 conv_iter=     107 cpu clock= 1.01E-01
+ tran: time= 2.5000E-09 tot_iter=     241 conv_iter=     109 cpu clock= 1.01E-01
+ sweep: tran tran0    end, cpu clock= 1.01E-01 peak memory=     527 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 1.03E-01
+       option post =     2.00
+ init: end read circuit files, cpu clock= 1.04E-01 peak memory=     527 mb
+ init: begin check errors, cpu clock= 1.04E-01
+ init: end check errors, cpu clock= 1.21E-01 peak memory=     527 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 1.21E-01
+       establish matrix -- done, cpu clock= 1.21E-01 peak memory=     527 mb
+       re-order matrix -- done, cpu clock= 1.21E-01 peak memory=     527 mb
+ init: end setup matrix, cpu clock= 1.21E-01 peak memory=     527 mb
+ output: invx4_tt0p65v-40c_load_sweep.mt2
+ sweep: tran tran0    begin, stop_t=  2.50E-09 #sweeps=**** cpu clock= 1.22E-01
+ tran: time= 2.7807E-10 tot_iter=      12 conv_iter=       6 cpu clock= 1.22E-01
+ tran: time= 5.0000E-10 tot_iter=      20 conv_iter=      10 cpu clock= 1.22E-01
+ tran: time= 7.5840E-10 tot_iter=     114 conv_iter=      51 cpu clock= 1.26E-01
+ tran: time= 1.0905E-09 tot_iter=     120 conv_iter=      54 cpu clock= 1.26E-01
+ tran: time= 1.3405E-09 tot_iter=     124 conv_iter=      56 cpu clock= 1.26E-01
+ tran: time= 1.5905E-09 tot_iter=     128 conv_iter=      58 cpu clock= 1.26E-01
+ tran: time= 1.7566E-09 tot_iter=     175 conv_iter=      80 cpu clock= 1.28E-01
+ tran: time= 2.1005E-09 tot_iter=     218 conv_iter=     100 cpu clock= 1.30E-01
+ tran: time= 2.3505E-09 tot_iter=     222 conv_iter=     102 cpu clock= 1.30E-01
+ tran: time= 2.5000E-09 tot_iter=     226 conv_iter=     104 cpu clock= 1.30E-01
+ sweep: tran tran0    end, cpu clock= 1.30E-01 peak memory=     527 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 1.32E-01
+       option post =     2.00
+ init: end read circuit files, cpu clock= 1.33E-01 peak memory=     527 mb
+ init: begin check errors, cpu clock= 1.33E-01
+ init: end check errors, cpu clock= 1.43E-01 peak memory=     527 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 1.43E-01
+       establish matrix -- done, cpu clock= 1.43E-01 peak memory=     527 mb
+       re-order matrix -- done, cpu clock= 1.43E-01 peak memory=     527 mb
+ init: end setup matrix, cpu clock= 1.43E-01 peak memory=     527 mb
+ output: invx4_tt0p65v-40c_load_sweep.mt3
+ sweep: tran tran0    begin, stop_t=  2.50E-09 #sweeps=**** cpu clock= 1.44E-01
+ tran: time= 2.7807E-10 tot_iter=      12 conv_iter=       6 cpu clock= 1.44E-01
+ tran: time= 5.0000E-10 tot_iter=      20 conv_iter=      10 cpu clock= 1.44E-01
+ tran: time= 7.7138E-10 tot_iter=      87 conv_iter=      40 cpu clock= 1.47E-01
+ tran: time= 1.0957E-09 tot_iter=      95 conv_iter=      44 cpu clock= 1.47E-01
+ tran: time= 1.3457E-09 tot_iter=      99 conv_iter=      46 cpu clock= 1.47E-01
+ tran: time= 1.5957E-09 tot_iter=     103 conv_iter=      48 cpu clock= 1.47E-01
+ tran: time= 1.7744E-09 tot_iter=     125 conv_iter=      59 cpu clock= 1.48E-01
+ tran: time= 2.0469E-09 tot_iter=     184 conv_iter=      85 cpu clock= 1.51E-01
+ tran: time= 2.2649E-09 tot_iter=     188 conv_iter=      87 cpu clock= 1.51E-01
+ tran: time= 2.5000E-09 tot_iter=     192 conv_iter=      89 cpu clock= 1.51E-01
+ sweep: tran tran0    end, cpu clock= 1.51E-01 peak memory=     527 mb
+>info:         ***** hspice job concluded
+ init: begin read circuit files, cpu clock= 1.53E-01
+       option post =     2.00
+ init: end read circuit files, cpu clock= 1.54E-01 peak memory=     527 mb
+ init: begin check errors, cpu clock= 1.54E-01
+ init: end check errors, cpu clock= 1.64E-01 peak memory=     527 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 1.64E-01
+       establish matrix -- done, cpu clock= 1.64E-01 peak memory=     527 mb
+       re-order matrix -- done, cpu clock= 1.64E-01 peak memory=     527 mb
+ init: end setup matrix, cpu clock= 1.64E-01 peak memory=     527 mb
+ output: invx4_tt0p65v-40c_load_sweep.mt4
+ sweep: tran tran0    begin, stop_t=  2.50E-09 #sweeps=**** cpu clock= 1.65E-01
+ tran: time= 2.7807E-10 tot_iter=      12 conv_iter=       6 cpu clock= 1.65E-01
+ tran: time= 5.0000E-10 tot_iter=      20 conv_iter=      10 cpu clock= 1.65E-01
+ tran: time= 7.5710E-10 tot_iter=      81 conv_iter=      38 cpu clock= 1.67E-01
+ tran: time= 1.0489E-09 tot_iter=      91 conv_iter=      43 cpu clock= 1.68E-01
+ tran: time= 1.2989E-09 tot_iter=      95 conv_iter=      45 cpu clock= 1.68E-01
+ tran: time= 1.5489E-09 tot_iter=      99 conv_iter=      47 cpu clock= 1.68E-01
+ tran: time= 1.8000E-09 tot_iter=     121 conv_iter=      58 cpu clock= 1.69E-01
+ tran: time= 2.0336E-09 tot_iter=     177 conv_iter=      82 cpu clock= 1.71E-01
+ tran: time= 2.3218E-09 tot_iter=     183 conv_iter=      85 cpu clock= 1.71E-01
+ tran: time= 2.5000E-09 tot_iter=     187 conv_iter=      87 cpu clock= 1.71E-01
+ sweep: tran tran0    end, cpu clock= 1.71E-01 peak memory=     527 mb
+>info:         ***** hspice job concluded
+  **error** invalid memory reference
+
+ lic: Release hspice token(s)

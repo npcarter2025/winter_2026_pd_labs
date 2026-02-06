@@ -1,0 +1,6 @@
+$DATA1 SOURCE='PrimeSim HSPICE' VERSION='W-2024.09 linux64' PARAM_COUNT=0
+.TITLE ''
+ rise_delay       fall_delay       rise_tr          fall_fr         
+ temper           alter#          
+  4.744e-11        5.543e-11        3.498e-11        3.053e-11      
+  -40.0000        3               
