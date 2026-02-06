@@ -192,3 +192,34 @@ Q2.2 Answer: INVERTING ARC (negative_unate) - Output changes opposite to input
 Total Points: 20 points (10 + 10)
 
 ================================================================================
+Q2.3 
+
+ 	nom_voltage : 0.750000;
+ 	nom_temperature : -40.000000;
+ 	nom_process : 0.99;
+
+
+Q2.4
+
+
+MACRO TNBUFFX2_RVT
+
+  SIZE 2.128 BY 1.672 ;
+
+  The layers are 
+  M1 (Metal1)
+  C0 (Contact)
+  NWELL N-Well layer for PMOS regions
+   and 
+  P0 (Polysilicon)
+
+
+The power signals are VDD and VSS 
+
+
+OBS is Obstruction
+
+OBS defines regions inside of a cell where routing is blocked.
+
+It prevents the PNR tool from routing over this.
+It's to prevent Design Rule Violations
