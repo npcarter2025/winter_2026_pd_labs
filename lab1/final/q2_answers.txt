@@ -1,0 +1,194 @@
+================================================================================
+                         TASK 2: WRITTEN QUESTIONS
+                    INVX4 Inverter Analysis and Library Files
+================================================================================
+
+Student: npcarter2025@gmail.com
+Date: February 6, 2026
+
+================================================================================
+Q2.1: Is both rise & fall delay increasing with rising of output load 
+      & input slew? (10 points)
+================================================================================
+
+ANSWER: YES, both rise and fall delays increase with rising output load AND 
+        rising input slew.
+
+SUPPORTING EVIDENCE FROM SIMULATION DATA:
+=========================================
+
+Part A: Effect of Input Slew (with fixed load = 15fF)
+------------------------------------------------------
+From Q1.1 simulation results:
+
+Input Slew (ps) | Rise Delay (ps) | Fall Delay (ps) | Change from 50ps
+----------------|-----------------|-----------------|------------------
+      50        |     38.12       |     32.68       | baseline
+     100        |     51.78       |     45.13       | +13.66 / +12.45
+     150        |     65.47       |     57.16       | +27.35 / +24.48
+     200        |     77.14       |     66.53       | +39.02 / +33.85
+     250        |     88.02       |     74.94       | +49.90 / +42.26
+
+Observation:
+✓ Rise delay increases by 49.9 ps (131% increase) from 50ps to 250ps slew
+✓ Fall delay increases by 42.26 ps (129% increase) from 50ps to 250ps slew
+✓ BOTH delays consistently INCREASE with increasing input slew
+✓ Linear relationship: ~2.0 ps delay increase per 10ps of input slew
+
+
+Part B: Effect of Output Load (with fixed slew = 150ps)
+--------------------------------------------------------
+From Q1.2 simulation results:
+
+Output Load (fF) | Rise Delay (ps) | Fall Delay (ps) | Change from 5fF
+-----------------|-----------------|-----------------|------------------
+       5         |     35.01       |     42.27       | baseline
+      10         |     47.44       |     55.43       | +12.43 / +13.16
+      15         |     57.16       |     65.47       | +22.15 / +23.20
+      20         |     64.05       |     73.70       | +29.04 / +31.43
+      25         |     70.91       |     80.97       | +35.90 / +38.70
+
+Observation:
+✓ Rise delay increases by 35.9 ps (103% increase) from 5fF to 25fF
+✓ Fall delay increases by 38.7 ps (92% increase) from 5fF to 25fF
+✓ BOTH delays consistently INCREASE with increasing output load
+✓ Linear relationship: ~1.8 ps delay increase per 1fF of load
+
+
+PHYSICAL EXPLANATION:
+====================
+
+1. WHY DELAYS INCREASE WITH INPUT SLEW:
+   - Slower input transitions → transistors take longer to fully turn on/off
+   - Input capacitance charging time becomes dominant
+   - Gate voltage changes more slowly → output transitions later
+   - The delay is measured at 50% VDD, so slower input means later crossing
+
+2. WHY DELAYS INCREASE WITH OUTPUT LOAD:
+   - Classic RC delay: t_delay = K × R_out × C_load
+   - Larger capacitance → more charge to move
+   - Same drive current, more capacitance → longer time
+   - Q = C × V, so ΔV/Δt = I/C (voltage changes slower with larger C)
+
+3. BOTH EFFECTS ARE LINEAR:
+   - First-order RC behavior dominates
+   - Captured in Liberty timing models using lookup tables
+   - Real designs must account for both effects
+
+
+CONCLUSION:
+===========
+YES, both rise and fall delays increase with:
+  1. Increasing input slew (demonstrated in Q1.1)
+  2. Increasing output load (demonstrated in Q1.2)
+
+
+================================================================================
+Q2.2: Is timing arc from input pin to output pin of inverter inverting arc,
+      non-inverting arc or nonunate? (10 points)
+================================================================================
+
+ANSWER: INVERTING ARC (also called negative_unate)
+
+
+EXPLANATION:
+============
+
+1. FUNCTIONAL BEHAVIOR OF AN INVERTER:
+   
+   Input  →  Output
+   ---------------
+     0    →    1      (LOW input produces HIGH output)
+     1    →    0      (HIGH input produces LOW output)
+   
+   The output ALWAYS changes in the OPPOSITE direction to the input.
+
+
+2. TIMING ARC CLASSIFICATIONS:
+
+   a) NON-INVERTING (positive_unate):
+      - Output changes in SAME direction as input
+      - Example: Buffer
+        • Input rising (0→1) → Output rising (0→1)
+        • Input falling (1→0) → Output falling (1→0)
+   
+   b) INVERTING (negative_unate): ← THIS IS THE INVERTER
+      - Output changes in OPPOSITE direction to input
+      - Example: Inverter
+        • Input rising (0→1) → Output falling (1→0)
+        • Input falling (1→0) → Output rising (0→1)
+   
+   c) NON-UNATE:
+      - Output direction depends on other input states
+      - Example: XOR gate, multiplexer
+        • Output can go either direction depending on other inputs
+
+
+3. VERIFICATION FROM OUR SIMULATION DATA:
+
+   Looking at the SPICE measurement commands in invx4_tt0p65v-40c.spi:
+   
+   .meas tran fall_delay trig v(INP) val='0.5*vdd' rise=1
+   +                      targ v(OUT) val='0.5*vdd' fall=1
+   
+   Translation: When INPUT RISES → OUTPUT FALLS (fall_delay)
+   
+   .meas tran rise_delay trig v(INP) val='0.5*vdd' fall=1
+   +                      targ v(OUT) val='0.5*vdd' rise=1
+   
+   Translation: When INPUT FALLS → OUTPUT RISES (rise_delay)
+   
+   This confirms the INVERTING relationship!
+
+
+4. LIBERTY FILE REPRESENTATION:
+
+   In .lib timing library files, an inverter's timing arc is specified as:
+   
+   timing_sense : negative_unate;
+   
+   The term "negative_unate" is the formal Liberty syntax for an inverting arc.
+
+
+5. CIRCUIT-LEVEL EXPLANATION:
+
+   CMOS Inverter Structure:
+   
+         VDD
+          |
+        [PMOS]  ← turns ON when input is LOW
+          |
+   IN ----+---- OUT
+          |
+        [NMOS]  ← turns ON when input is HIGH
+          |
+         GND
+   
+   - Input HIGH → NMOS ON, PMOS OFF → Output pulled to GND (LOW)
+   - Input LOW  → PMOS ON, NMOS OFF → Output pulled to VDD (HIGH)
+   
+   The transistor switching ensures opposite polarity at output.
+
+
+CONCLUSION:
+===========
+The timing arc from input to output of an inverter is an INVERTING ARC 
+(negative_unate) because the output always transitions in the opposite 
+direction to the input.
+
+This is the fundamental behavior that gives the inverter its name and function.
+
+
+================================================================================
+SUMMARY OF Q2.1 AND Q2.2
+================================================================================
+
+Q2.1 Answer: YES - Both rise and fall delays increase with rising output load 
+             and input slew (demonstrated with simulation data from Q1.1 and Q1.2)
+
+Q2.2 Answer: INVERTING ARC (negative_unate) - Output changes opposite to input
+
+
+Total Points: 20 points (10 + 10)
+
+================================================================================
